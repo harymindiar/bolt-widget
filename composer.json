@@ -17,7 +17,7 @@
             "init.php"
         ],
         "psr-4": {
-            "HaryMindiar\\Bolt\\Widget": ""
+            "HaryMindiar\\Bolt\\Widget\\": ""
         }
     },
     "minimum-stability": "dev",
