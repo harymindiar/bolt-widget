@@ -9,9 +9,15 @@ class Extension extends BaseExtension
 {
     const EXTENSION_NAME = 'BoltWidgetExtension';
 
-    public function initialize() {
-        $this->addCss('assets/extension.css');
-        $this->addJavascript('assets/start.js', true);
+    public function initialize()
+    {
+    	/*
+         * Frontend
+         */
+        if ($this->app['config']->getWhichEnd() == 'frontend') {
+            // Twig functions
+            $this->app['twig']->addExtension(new \HaryMindiar\Bolt\Widget\Twig\WidgetTwigExtension($this->app));
+        }
     }
 
     public function getName()
