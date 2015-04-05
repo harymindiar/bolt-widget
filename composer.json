@@ -4,7 +4,7 @@
     "type": "bolt-extension",
     "require": {
         "bolt/bolt": ">=2.0.0,<3.0.0",
-        "igorw/config-service-provider": "dev-master"
+        "igorw/config-service-provider": "1.2.*@dev"
     },
     "license": "MIT",
     "authors": [
@@ -21,8 +21,6 @@
             "HaryMindiar\\Bolt\\Widget\\": ["", "src/"]
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "extra": {
         "bolt-assets": "assets"
     }
