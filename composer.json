@@ -1,0 +1,27 @@
+{
+    "name": "harymindiar/bolt-widget",
+    "description": "Widget extension for Bolt CMS. This extension will render your widget with through Twig function",
+    "type": "bolt-extension",
+    "require": {
+        "bolt/bolt": ">=2.0.0,<3.0.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hary Mindiar", 
+            "email": "mindiar@yahoo.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "init.php"
+        ],
+        "psr-4": {
+            "Bolt\\Extension\\HaryMindiar\\Widget\\": ""
+        }
+    },
+    
+    "extra": {
+        "bolt-assets": "assets"
+    }
+}
