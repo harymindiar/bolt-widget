@@ -16,7 +16,7 @@
         "files": [
             "init.php"
         ],
-        "psr-4": {
+        "psr-2": {
             "HaryMindiar\\Bolt\\Widget\\": ""
         }
     },
