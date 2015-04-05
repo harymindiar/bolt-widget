@@ -20,7 +20,8 @@
             "HaryMindiar\\Bolt\\Widget": ""
         }
     },
-    
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "extra": {
         "bolt-assets": "assets"
     }
