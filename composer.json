@@ -3,8 +3,7 @@
     "description": "Widget extension for Bolt CMS. This extension will render your widget with through Twig function",
     "type": "bolt-extension",
     "require": {
-        "bolt/bolt": ">=2.0.0,<3.0.0",
-        "igorw/config-service-provider": "@dev"
+        "bolt/bolt": ">=2.0.0,<3.0.0"
     },
     "license": "MIT",
     "authors": [
@@ -21,6 +20,8 @@
             "HaryMindiar\\Bolt\\Widget\\": ["", "src/"]
         }
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "extra": {
         "bolt-assets": "assets"
     }
