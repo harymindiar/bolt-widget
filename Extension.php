@@ -1,13 +1,13 @@
 <?php
 
-namespace Bolt\Extension\HaryMindiar\Widget;
+namespace HaryMindiar\Bolt\Widget;
 
 use Bolt\Application;
 use Bolt\BaseExtension;
 
 class Extension extends BaseExtension
 {
-    const EXTENSION_NAME = 'BoltWidgetExtension'
+    const EXTENSION_NAME = 'BoltWidgetExtension';
 
     public function initialize() {
         $this->addCss('assets/extension.css');
