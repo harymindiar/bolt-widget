@@ -4,7 +4,7 @@
     "type": "bolt-extension",
     "require": {
         "bolt/bolt": ">=2.0.0,<3.0.0",
-        "igorw/config-service-provider": "*"
+        "igorw/config-service-provider": "@dev"
     },
     "license": "MIT",
     "authors": [
