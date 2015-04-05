@@ -5,12 +5,26 @@ namespace HaryMindiar\Bolt\Widget;
 use Bolt\Application;
 use Bolt\BaseExtension;
 
+
 class Extension extends BaseExtension
-{
-    const EXTENSION_NAME = 'BoltWidgetExtension';
+{   
+    const CONTAINER = 'extensions.BoltWidgetExtension';
+
+    public function isSafe()
+    {
+        return true;
+    }
 
     public function initialize()
     {
+        $this->app['widget.sample'] = $this->app->share(
+            function (Application $app) {
+                $sampleWidget = new SampleWidget($app['twig']);
+
+                return $sampleWidget;
+            }
+        );
+        
     	/*
          * Frontend
          */
@@ -22,7 +36,7 @@ class Extension extends BaseExtension
 
     public function getName()
     {
-        self::EXTENSION_NAME;
+        return 'BoltWidgetExtension';
     }
 }
 

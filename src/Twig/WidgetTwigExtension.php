@@ -3,6 +3,7 @@
 namespace HaryMindiar\Bolt\Widget\Twig;
 
 use Silex\Application;
+use HaryMindiar\Bolt\Widget\Extension;
 
 class WidgetTwigExtension extends \Twig_Extension
 {
@@ -11,8 +12,6 @@ class WidgetTwigExtension extends \Twig_Extension
     private $config;
 
     private $twig = null;
-
-    const TWIG_NAME_EXTENSION = 'boltwidgetextension';
 
     public function __construct(Application $app)
     {
@@ -27,18 +26,18 @@ class WidgetTwigExtension extends \Twig_Extension
 
     public function getName()
     {
-        return selft::TWIG_NAME_EXTENSION;
+        return 'boltwidget';
     }
 
     public function getFunctions()
     {
         return array(
-            'boltwidget' => new \Twig_Function_Method($this, 'widgetRenderer')
+            'boltwidget' => new \Twig_Function_Method($this, 'boltWidget')
         );
     }
 
-    public function widgetRenderer($serviceWidgetName, $cached = false, $ttl = 600)
+    public function boltWidget($serviceWidgetName, $cached = false, $ttl = 600)
     {
-        return 'hello';
+        return new \Twig_Markup("<p><strong>Hello!</strong></p>", 'UTF-8');
     }
 }

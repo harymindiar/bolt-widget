@@ -4,10 +4,10 @@ namespace HaryMindiar\Bolt\Widget;
 
 abstract class WidgetBase implements WidgetInterface
 {
-	protected $templateEngine;
+	protected $twigEnv;
 
-	public function __construct($templateEngine)
+	public function __construct($twigEnv)
 	{
-		$this->templateEngine = $templateEngine;
+		$this->twigEnv = $twigEnv;
 	}
 }
