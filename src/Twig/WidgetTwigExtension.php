@@ -9,14 +9,11 @@ class WidgetTwigExtension extends \Twig_Extension
 {
     private $widgets;
 
-    private $cache;
-
     private $twig = null;
 
-    public function __construct(Widgets $widgets, $cache)
+    public function __construct(Widgets $widgets)
     {
         $this->widgets = $widgets;
-        $this->cache = $cache;
     }
 
     public function initRuntime(\Twig_Environment $environment)
@@ -32,12 +29,12 @@ class WidgetTwigExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'render_widget' => new \Twig_Function_Method($this, 'builtWidget')
+            'render_widget' => new \Twig_Function_Method($this, 'buildWidget')
         );
     }
 
-    public function builtWidget($serviceWidgetName, $cached = false, $ttl = 600)
+    public function buildWidget($serviceWidgetName)
     {
-        return new \Twig_Markup("<p><strong>Hello!</strong></p>", 'UTF-8');
+        // do some fun stuff here
     }
 }

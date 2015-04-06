@@ -4,6 +4,7 @@ namespace HaryMindiar\Bolt\Widget;
 
 use Bolt\Application;
 use Bolt\BaseExtension;
+use HaryMindiar\Bolt\Widget\SampleWidget;
 
 class Extension extends BaseExtension
 {   
@@ -16,14 +17,17 @@ class Extension extends BaseExtension
 
     public function initialize()
     {
-        $this->app->register(new HaryMindiar\Bolt\Widget\ServiceProvider\WidgetServiceProvider($this->app));
+        $this->app->register(new \HaryMindiar\Bolt\Widget\ServiceProvider\WidgetServiceProvider($this->app));
         
+        $sampleWidget = new SampleWidget($this->app['twig']);
+
+        $this->app['widgets.provider']->addWidget('sample_widget', $sampleWidget);
     	/*
          * Frontend
          */
         if ($this->app['config']->getWhichEnd() == 'frontend') {
             // Twig functions
-            $this->app['twig']->addExtension(new \HaryMindiar\Bolt\Widget\Twig\WidgetTwigExtension($this->app['widgets'], $this->app['cache']));
+            $this->app['twig']->addExtension(new \HaryMindiar\Bolt\Widget\Twig\WidgetTwigExtension($this->app['widgets.provider']));
         }
     }
 

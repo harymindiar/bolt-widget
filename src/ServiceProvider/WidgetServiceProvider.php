@@ -4,7 +4,7 @@ namespace HaryMindiar\Bolt\Widget\ServiceProvider;
 
 use Silex\ServiceProviderInterface;
 use Silex\Application;
-use HaryMindiar\Bolt\Widget\Widgets;
+use HaryMindiar\Bolt\Widget\ServiceProvider\Widgets;
 
 class WidgetServiceProvider implements ServiceProviderInterface
 {
@@ -14,7 +14,7 @@ class WidgetServiceProvider implements ServiceProviderInterface
 			function () {
 				return new Widgets();
 			}
-		)
+		);
 	}
 
 	public function boot(Application $app)
