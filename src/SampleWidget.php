@@ -6,13 +6,8 @@ use HaryMindiar\Bolt\Widget\WidgetBase;
 
 class SampleWidget extends WidgetBase
 {
-    public function __construct($twigEnv)
+    public function getOutputWidget()
     {
-        parent::__construct($twigEnv);
-    }
-
-    public function render($templateName, $data)
-    {
-        echo 'test';
+        return 'test';
     }
 }

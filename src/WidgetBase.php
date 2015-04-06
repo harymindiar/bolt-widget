@@ -10,4 +10,9 @@ abstract class WidgetBase implements WidgetInterface
     {
         $this->twigEnv = $twigEnv;
     }
+
+    public function render($templateName, $data)
+    {
+    	return $this->twigEnv->render($templateName, $data);
+    }
 }

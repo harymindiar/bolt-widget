@@ -7,16 +7,16 @@ use HaryMindiar\Bolt\Widget\Extension;
 
 class WidgetTwigExtension extends \Twig_Extension
 {
-    private $app;
+    private $widgets;
 
-    private $config;
+    private $cache;
 
     private $twig = null;
 
-    public function __construct(Application $app)
+    public function __construct(Widgets $widgets, $cache)
     {
-        $this->app      = $app;
-        $this->config   = $this->app[Extension::CONTAINER]->config;
+        $this->widgets = $widgets;
+        $this->cache = $cache;
     }
 
     public function initRuntime(\Twig_Environment $environment)
@@ -26,17 +26,17 @@ class WidgetTwigExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'boltwidget';
+        return 'render_widget';
     }
 
     public function getFunctions()
     {
         return array(
-            'boltwidget' => new \Twig_Function_Method($this, 'boltWidget')
+            'render_widget' => new \Twig_Function_Method($this, 'builtWidget')
         );
     }
 
-    public function boltWidget($serviceWidgetName, $cached = false, $ttl = 600)
+    public function builtWidget($serviceWidgetName, $cached = false, $ttl = 600)
     {
         return new \Twig_Markup("<p><strong>Hello!</strong></p>", 'UTF-8');
     }

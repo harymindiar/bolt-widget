@@ -5,7 +5,6 @@ namespace HaryMindiar\Bolt\Widget;
 use Bolt\Application;
 use Bolt\BaseExtension;
 
-
 class Extension extends BaseExtension
 {   
     const CONTAINER = 'extensions.BoltWidgetExtension';
@@ -17,11 +16,9 @@ class Extension extends BaseExtension
 
     public function initialize()
     {
-        $this->app['widget.sample'] = $this->app->share(
+        $this->app['widgets'] = $this->app->share(
             function (Application $app) {
-                $sampleWidget = new SampleWidget($app['twig']);
-
-                return $sampleWidget;
+                $widgets = new HaryMindiar\Bolt\Widget\Widgets();
             }
         );
         
@@ -30,7 +27,7 @@ class Extension extends BaseExtension
          */
         if ($this->app['config']->getWhichEnd() == 'frontend') {
             // Twig functions
-            $this->app['twig']->addExtension(new \HaryMindiar\Bolt\Widget\Twig\WidgetTwigExtension($this->app));
+            $this->app['twig']->addExtension(new \HaryMindiar\Bolt\Widget\Twig\WidgetTwigExtension($this->app['widgets'], $this->app['cache']));
         }
     }
 
