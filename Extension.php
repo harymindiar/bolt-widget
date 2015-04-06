@@ -16,11 +16,7 @@ class Extension extends BaseExtension
 
     public function initialize()
     {
-        $this->app['widgets'] = $this->app->share(
-            function (Application $app) {
-                $widgets = new HaryMindiar\Bolt\Widget\Widgets();
-            }
-        );
+        $this->app->register(new HaryMindiar\Bolt\Widget\ServiceProvider\WidgetServiceProvider($this->app));
         
     	/*
          * Frontend

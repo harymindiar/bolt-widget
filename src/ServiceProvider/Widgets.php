@@ -1,6 +1,6 @@
 <?php
 
-namespace HaryMindiar\Bolt\Widget;
+namespace HaryMindiar\Bolt\Widget\ServiceProvider;
 
 use HaryMindiar\Bolt\Widget\WidgetInterface;
 
