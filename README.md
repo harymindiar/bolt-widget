@@ -1,4 +1,4 @@
-Bolt Extension Widget
+Bolt Widget Extension 
 =====================
 
 Widget extension will render your widget through Twig function
