@@ -19,7 +19,7 @@ class Extension extends BaseExtension
     {
         $this->app->register(new \HaryMindiar\Bolt\Widget\ServiceProvider\WidgetServiceProvider($this->app));
         
-        $sampleWidget = new SampleWidget($this->app['twig']);
+        $sampleWidget = new SampleWidget($this->app['render']);
 
         $this->app['widgets.provider']->addWidget('sample_widget', $sampleWidget);
     	/*
