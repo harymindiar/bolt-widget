@@ -42,6 +42,6 @@ class WidgetTwigExtension extends \Twig_Extension
             return;
         }
 
-        return $widget->getOutputWidget($arguments);
+        return new \Twig_Markup($widget->getOutputWidget($arguments), 'UTF-8');
     }
 }
