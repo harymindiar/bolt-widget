@@ -6,7 +6,7 @@ use HaryMindiar\Bolt\Widget\WidgetBase;
 
 class SampleWidget extends WidgetBase
 {
-    public function getOutputWidget()
+    public function getOutputWidget(array $arguments)
     {
         return 'test';
     }

@@ -3,7 +3,7 @@
 namespace HaryMindiar\Bolt\Widget\Twig;
 
 use Silex\Application;
-use HaryMindiar\Bolt\Widget\Extension;
+use HaryMindiar\Bolt\Widget\ServiceProvider\Widgets;
 
 class WidgetTwigExtension extends \Twig_Extension
 {
@@ -35,6 +35,13 @@ class WidgetTwigExtension extends \Twig_Extension
 
     public function buildWidget($serviceWidgetName)
     {
-        // do some fun stuff here
+        $arguments = func_get_args();
+        // $arguments[0] is widget key
+        $widget = $this->widgets->getWidget($arguments[0]);
+        if (!$widget) {
+            return;
+        }
+
+        return $widget->getOutputWidget($arguments);
     }
 }
