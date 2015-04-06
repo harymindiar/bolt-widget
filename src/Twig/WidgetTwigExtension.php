@@ -3,20 +3,17 @@
 namespace HaryMindiar\Bolt\Widget\Twig;
 
 use Silex\Application;
-use HaryMindiar\Bolt\Widget\Extension;
+use HaryMindiar\Bolt\Widget\ServiceProvider\Widgets;
 
 class WidgetTwigExtension extends \Twig_Extension
 {
-    private $app;
-
-    private $config;
+    private $widgets;
 
     private $twig = null;
 
-    public function __construct(Application $app)
+    public function __construct(Widgets $widgets)
     {
-        $this->app      = $app;
-        $this->config   = $this->app[Extension::CONTAINER]->config;
+        $this->widgets = $widgets;
     }
 
     public function initRuntime(\Twig_Environment $environment)
@@ -26,18 +23,25 @@ class WidgetTwigExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'boltwidget';
+        return 'render_widget';
     }
 
     public function getFunctions()
     {
         return array(
-            'boltwidget' => new \Twig_Function_Method($this, 'boltWidget')
+            'render_widget' => new \Twig_Function_Method($this, 'buildWidget')
         );
     }
 
-    public function boltWidget($serviceWidgetName, $cached = false, $ttl = 600)
+    public function buildWidget($serviceWidgetName)
     {
-        return new \Twig_Markup("<p><strong>Hello!</strong></p>", 'UTF-8');
+        $arguments = func_get_args();
+        // $arguments[0] is widget key
+        $widget = $this->widgets->getWidget($arguments[0]);
+        if (!$widget) {
+            return;
+        }
+
+        return $widget->getOutputWidget($arguments);
     }
 }
