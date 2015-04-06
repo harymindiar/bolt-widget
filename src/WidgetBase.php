@@ -4,15 +4,15 @@ namespace HaryMindiar\Bolt\Widget;
 
 abstract class WidgetBase implements WidgetInterface
 {
-    protected $twigEnv;
+    protected $templateRenderer;
 
-    public function __construct($twigEnv)
+    public function __construct($templateRenderer)
     {
-        $this->twigEnv = $twigEnv;
+        $this->templateRenderer = $templateRenderer;
     }
 
     public function render($templateName, $data)
     {
-    	return $this->twigEnv->render($templateName, $data);
+    	return $this->templateRenderer->render($templateName, $data);
     }
 }
