@@ -1,9 +1,9 @@
 <?php
 
-namespace HaryMindiar\Bolt\Widget\Twig;
+namespace Bolt\Extension\HaryMindiar\BoltWidget\Twig;
 
 use Silex\Application;
-use HaryMindiar\Bolt\Widget\ServiceProvider\Widgets;
+use Bolt\Extension\HaryMindiar\BoltWidget\ServiceProvider\Widgets;
 
 class WidgetTwigExtension extends \Twig_Extension
 {

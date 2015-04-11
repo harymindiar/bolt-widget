@@ -1,10 +1,10 @@
 <?php
 
-namespace HaryMindiar\Bolt\Widget\ServiceProvider;
+namespace Bolt\Extension\HaryMindiar\BoltWidget\ServiceProvider;
 
 use Silex\ServiceProviderInterface;
 use Silex\Application;
-use HaryMindiar\Bolt\Widget\ServiceProvider\Widgets;
+use Bolt\Extension\HaryMindiar\BoltWidget\ServiceProvider\Widgets;
 
 class WidgetServiceProvider implements ServiceProviderInterface
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace HaryMindiar\Bolt\Widget;
+namespace Bolt\Extension\HaryMindiar\BoltWidget;
 
-use HaryMindiar\Bolt\Widget\WidgetBase;
+use Bolt\Extension\HaryMindiar\BoltWidget\WidgetBase;
 
 class SampleWidget extends WidgetBase
 {

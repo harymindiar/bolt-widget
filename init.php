@@ -1,5 +1,5 @@
 <?php
 
-namespace HaryMindiar\Bolt\Widget;
+namespace Bolt\Extension\HaryMindiar\BoltWidget;
 
-$app['extensions']->register(new \HaryMindiar\Bolt\Widget\Extension($app));
+$app['extensions']->register(new \Bolt\Extension\HaryMindiar\BoltWidget\Extension($app));
