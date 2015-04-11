@@ -1,6 +1,6 @@
 <?php
 
-namespace HaryMindiar\Bolt\Widget;
+namespace Bolt\Extension\HaryMindiar\BoltWidget;
 
 interface WidgetInterface
 {

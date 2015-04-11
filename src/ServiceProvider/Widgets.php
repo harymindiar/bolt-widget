@@ -1,8 +1,8 @@
 <?php
 
-namespace HaryMindiar\Bolt\Widget\ServiceProvider;
+namespace Bolt\Extension\HaryMindiar\BoltWidget\ServiceProvider;
 
-use HaryMindiar\Bolt\Widget\WidgetInterface;
+use Bolt\Extension\HaryMindiar\BoltWidget\WidgetInterface;
 
 class Widgets
 {
